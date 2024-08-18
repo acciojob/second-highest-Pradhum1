@@ -11,6 +11,33 @@
 		function secondHighest(arr) {
 			//Write your code here
 			
+			 arr = arr.map(Number);
+    
+    // Check if the array has less than 2 elements
+    if (arr.length < 2) {
+        return "Array must have at least two elements";
+    }
+    
+    let highest = -Infinity;
+    let secondHighest = -Infinity;
+
+    // Traverse the array to find the highest and second highest values
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > highest) {
+            secondHighest = highest;
+            highest = arr[i];
+        } else if (arr[i] > secondHighest && arr[i] < highest) {
+            secondHighest = arr[i];
+        }
+    }
+    
+    // Check if a valid second highest value was found
+    if (secondHighest === -Infinity) {
+        return "No second highest element";
+    }
+    
+    return secondHighest;
+
 		}
 
 		function Main() {
