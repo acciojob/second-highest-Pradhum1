@@ -9,11 +9,11 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-		 arr = arr.map(Number);
+    arr = arr.map(Number);
     
     // Check if the array has less than 2 elements
     if (arr.length < 2) {
-        return "Array must have at least two elements";
+        return -Infinity;
     }
     
     let highest = -Infinity;
@@ -31,11 +31,11 @@
     
     // Check if a valid second highest value was found
     if (secondHighest === -Infinity) {
-        return "No second highest element";
+        return -Infinity;
     }
     
     return secondHighest;
-		
+}
 		
 
 		function Main() {
